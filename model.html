@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Donegal+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+    <title>Calcular valor do piso</title>
+  </head>
+  <body>
+    <main class="bloco">
+      <div class="modal">
+        <div class="calculadora">
+          <p id="resultado"></p>
+          <table>
+            <tr>
+              <td><button class="botao1" onclick="clean()">C</button></td>
+              <td><button class="botao" onclick="back()">↩</button></td>
+              <td><button class="botao" onclick="insert('/')">÷</button></td>
+              <td><button class="botao" onclick="insert('*')">X</button></td>
+            </tr>
+            <tr>
+              <td><button class="botao" onclick="insert('7')">7</button></td>
+              <td><button class="botao" onclick="insert('8')">8</button></td>
+              <td><button class="botao" onclick="insert('9')">9</button></td>
+              <td><button class="botao" onclick="insert('-')">-</button></td>
+            </tr>
+            <tr>
+              <td><button class="botao" onclick="insert('4')">4</button></td>
+              <td><button class="botao" onclick="insert('5')">5</button></td>
+              <td><button class="botao" onclick="insert('6')">6</button></td>
+              <td><button class="botao" onclick="insert('+')">+</button></td>
+            </tr>
+            <tr>
+              <td><button class="botao" onclick="insert('1')">1</button></td>
+              <td><button class="botao" onclick="insert('2')">2</button></td>
+              <td><button class="botao" onclick="insert('3')">3</button></td>
+              <td rowspan="2"><button class="botao" style="height: 102px" onclick="calcular()"> = </button></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <button class="botao" style="width: 102px" onclick="insert('0')"> 0 </button></td>
+              <td><button class="botao" onclick="insert('.')">.</button></td>
+            </tr>
+          </table>
+        </div>
+
+        <button class="btn-close" onclick="onClose()"> Fechar Calculadora </button>
+      </div>
+    </main>
+  
+    <button class="btn-open" onclick="onOpen()">
+      <div class="mostrar">Abrir Calculadora</div>
+      <i class="fa-thin fa-calculator" style="color: #000000"></i>
+    </button>
+
+    <div class="container">
+      <div class="header">
+        <h2>Calcule o valor para o seu piso</h2>
+      </div>
+
+      
+        <div class="formP">
+          <P>M² do seu apartamento:<input type="number" id="m2" placeholder="Digite quantos m² o seu ap..."/>m²</P>
+        </div>
+        <div class="form2">
+          <p>Valor do m² do seu piso: R$<input type="number" id="piso" placeholder="Digite o valor do piso..."/></p>
+        </div>
+        <div class="form3">
+          Estilo de piso
+          <input class='marco' type="radio" name="marcador1" id='Laminado' checked/>
+          <label for="Laminado">Laminado</label>
+          <input class="marco" type="radio" name="marcador1" id="Vinilico" />
+          <label for="Vinilico">Vinilíco</label>
+          <input class="marco" type="radio" name="marcador1" id="Porcelanato" />
+          <label for="Porcelanato">Porcelanato</label>
+        </div>
+        <div class="form4">
+          Estilo de aplicação
+          <input class="marco" type="radio" name="marcador2" id="normal" checked/>
+          <label for="normal">Normal</label>
+          <input class="marco" type="radio" name="marcador2" id="escama" />
+          <label for="escama">Escama</label>
+        </div>
+        <button  name="button" value="Calcular" id="resul" onclick="resultado()">
+          Calcular valor
+        </button>
+      
+      <div class="resposta" id="resposta">Valor do seu piso</div>
+    </div>
+
+    
+    
+    <script src="https://kit.fontawesome.com/8b1ab53edc.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
